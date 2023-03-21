@@ -6,16 +6,56 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct ContentView: View {
+    @State var users: Users = []
+    
+    func refreshUsers() {
+        AF.request("https://jsonplaceholder.typicode.com/users").response { response in
+            if let data = response.data {
+                
+                users = try! JSONDecoder().decode(Users.self, from: data).shuffled()
+            } else {
+                print("Erreur")
+            }
+        }
+    }
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            NavigationStack {
+                List {
+                    Section("Users") {
+                        ForEach(users) { user in
+                            NavigationLink(value: user) {
+                                Text(user.name)
+                            }
+                        }
+                    }
+                }.navigationDestination(for: User.self) { user in
+                    Form {
+                        Section("Informations") {
+                            HStack {
+                                Text("Nom")
+                                Text(user.name)
+                            }
+                            HStack {
+                                Text("Email")
+                                Text(user.email)
+                            }
+                        }
+                    }
+                }
+                
+            }
+            
+        }.refreshable {
+            refreshUsers()
         }
-        .padding()
+        .onAppear() {
+            refreshUsers()
+        }
     }
 }
 
