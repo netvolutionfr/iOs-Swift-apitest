@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521C9A5529CE1D4700958EE6 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C9A5429CE1D4700958EE6 /* UserDetailView.swift */; };
 		527D422F29C9ED9900B9C0C0 /* apitestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D422E29C9ED9900B9C0C0 /* apitestApp.swift */; };
 		527D423129C9ED9900B9C0C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D423029C9ED9900B9C0C0 /* ContentView.swift */; };
 		527D423329C9ED9A00B9C0C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527D423229C9ED9A00B9C0C0 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		521C9A5429CE1D4700958EE6 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		527D422B29C9ED9900B9C0C0 /* apitest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = apitest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		527D422E29C9ED9900B9C0C0 /* apitestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apitestApp.swift; sourceTree = "<group>"; };
 		527D423029C9ED9900B9C0C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				527D423229C9ED9A00B9C0C0 /* Assets.xcassets */,
 				527D423429C9ED9A00B9C0C0 /* Preview Content */,
 				527D424229C9EE2900B9C0C0 /* ApiModels.swift */,
+				521C9A5429CE1D4700958EE6 /* UserDetailView.swift */,
 			);
 			path = apitest;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				521C9A5529CE1D4700958EE6 /* UserDetailView.swift in Sources */,
 				527D424329C9EE2900B9C0C0 /* ApiModels.swift in Sources */,
 				527D423129C9ED9900B9C0C0 /* ContentView.swift in Sources */,
 				527D422F29C9ED9900B9C0C0 /* apitestApp.swift in Sources */,

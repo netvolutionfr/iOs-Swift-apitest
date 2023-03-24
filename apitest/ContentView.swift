@@ -10,6 +10,7 @@ import Alamofire
 
 struct ContentView: View {
     @State var users: Users = []
+    @State var path = NavigationPath()
     
     func refreshUsers() {
         AF.request("https://jsonplaceholder.typicode.com/users").response { response in
@@ -24,7 +25,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            NavigationStack {
+            NavigationStack(path: $path) {
                 List {
                     Section("Users") {
                         ForEach(users) { user in
@@ -34,18 +35,7 @@ struct ContentView: View {
                         }
                     }
                 }.navigationDestination(for: User.self) { user in
-                    Form {
-                        Section("Informations") {
-                            HStack {
-                                Text("Nom")
-                                Text(user.name)
-                            }
-                            HStack {
-                                Text("Email")
-                                Text(user.email)
-                            }
-                        }
-                    }
+                    UserDetailView(user: user)
                 }
                 
             }
